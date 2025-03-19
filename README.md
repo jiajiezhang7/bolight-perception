@@ -2,6 +2,17 @@
 
 A ROS-based perception system for processing multi-LiDAR data.
 
+## System Overview
+
+### 1. Original Scene
+<img src="figs/1_origin_scene.png" width="800">
+
+### 2. Point Cloud Detection
+<img src="figs/2_detected_pc.png" width="800">
+
+### 3. Custom Message Visualization
+<img src="figs/3_custom_msg.png" width="800">
+
 ## Prerequisites
 
 ### Dependencies

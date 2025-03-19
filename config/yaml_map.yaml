@@ -1,0 +1,35 @@
+
+# the list of all the solar racks to be installed
+origin:
+  Shanghaitech:
+    long: 121.59246252563939
+    lat: 31.176355715557207
+
+# Since Perception people haven't get position of base_link from Differential GPS,
+# We assume base_link is at some reasonable place during solar panel process (from calculation). 
+
+baselinks:
+# id=1 baselink when processing id=1 rack
+  - id: 1
+    long: 121.59351153481504 
+    lat: 31.176355711282966 
+    height: 2.25          # the height of base_link frame above ground (we estimated from given pc dataset)
+
+
+
+
+racks:
+  # Assuming id=1 rack is located 100 meters east of the map origin
+  - id: 1 
+    # long: 121.5935990489509919 # longitude of the center of the rack
+    # lat: 31.1763846448055766   # latitude
+    long: 121.5936069946500169
+    lat: 31.1763846448055766
+    radians: 0.6108652381980153  # 35 degree of given model
+
+  # Assuming the first rack is located 200 meters east of the map origin:
+  - id: 2
+    long: 121.59456054399048    # longitude of the center of the rack
+    lat: 31.17635569846024     # latitude
+    radians: 0.6108652381980153
+    

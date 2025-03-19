@@ -1,0 +1,65 @@
+# Last modifed by Jiajie 2024.1.30
+# the transformation from lidars to robot baselink
+  # & tf from baselink to Gazebo world 
+lidar0:
+  frame_id: "base_link"
+  child_frame_id: "lidar0_link"
+  translation:
+    # x: -8.32
+    x: -9.10
+    y: -0.15
+    z: 0.06
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: -0.043619387365
+    w: 0.999048221582
+
+lidar1:
+  frame_id: "base_link"
+  child_frame_id: "lidar1_link"
+  translation:
+    # x: -4.60
+    x: -5.40 # -5.00 -5.40
+    y: -0.315
+    z: -0.00
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+
+lidar2:
+  frame_id: "base_link"
+  child_frame_id: "lidar2_link"
+  translation:
+    # x: -12.80 
+    x: -13.72 # -13.30 -13.60
+    y: -0.315
+    z: -0.00
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+
+
+# driving people have created a world frame in Gazebo, that its x axis points to north.
+# We assume the solar panel once set, it faces to south (according to convention), 
+  # thus set the direction of stands' frame
+  # since we set the frame of baselink and the stands are the same direction, 
+  # the direction of baselink frame is fixed too if it starts to process solar panel.
+  # which is: x axis points to east (right hand coordinate.) 
+  # we use this info to do long/lat2xy
+megatron:
+  frame_id: "world"
+  child_frame_id: "base_link"
+  translation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  rotation:
+    x: 0.0
+    y: 0.0
+    z: 0.707106781187
+    w: 0.707106781187

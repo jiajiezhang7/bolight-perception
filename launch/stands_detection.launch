@@ -1,0 +1,19 @@
+<launch>
+    <!-- define bag path-->
+    <!-- <arg name="bag_file" default="/home/iei/soeren_ws/bags/3lidars_stands.bag"/> -->
+    <arg name="bag_file" default="/home/donglzh/Bolight-dataset/3lidars_stands.bag"/>
+    <!-- start playing bag in a loop for demo Feb.05 :) -->
+    <node pkg="rosbag" type="play" name="bag_player" args="--loop $(arg bag_file)" launch-prefix="bash -c 'sleep 2;$0 $@'"/>
+    <!-- start cpp-->
+    <node pkg="perception" type="tf_pub" name="tf_pub"/>
+    
+
+
+    <node pkg="perception" type="action_server" name="action_sever" output="screen"/>
+
+    <!--you shall comment the next roll if you want to combine state machine as the action_client-->
+    <node pkg="perception" type="action_client" name="action_client" output="screen"/>
+    
+    <!-- start rviz-->
+    <node pkg="rviz" type="rviz" name="rviz3" args="-d $(find perception)/visualization/rviz.rviz" required="true"/>
+</launch>
